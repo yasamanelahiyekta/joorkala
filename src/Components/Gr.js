@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getgr } from '../Redux/Action'
-import { Box, Card, CardActionArea, CardContent, CardMedia, Divider, FormControl, Grid, Rating, Slider, Typography } from '@mui/material'
+import { Box, Card, CardActionArea, CardContent, Grid, Rating, Slider, Typography } from '@mui/material'
 
 const Gr = () => {
     const { grData, grLoading, grError } = useSelector(s => s.getGr)

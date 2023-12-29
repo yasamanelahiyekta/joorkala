@@ -3,7 +3,7 @@ import React from 'react'
 
 const Electronics = ({ resault, value }) => {
     const category = resault.filter(item => {
-        return item.category == "electronics"
+        return item.category === "electronics"
 
     })
     console.log(category);

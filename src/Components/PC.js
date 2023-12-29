@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getpc, setPrice } from '../Redux/Action'
-import { Accordion, AccordionDetails, AccordionSummary, Box, Button, Card, CardActionArea, CardContent, CardMedia, Divider, FormControl, FormControlLabel, FormLabel, Grid, LinearProgress, Radio, RadioGroup, Rating, Slider, Typography } from '@mui/material'
+import { getpc } from '../Redux/Action'
+import { Box, Card, CardActionArea, CardContent, Divider, FormControl, FormControlLabel, Grid, LinearProgress, Radio, RadioGroup, Rating, Slider, Typography } from '@mui/material'
 import { red } from '@mui/material/colors'
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { useNavigate } from 'react-router-dom'
 import Electronics from './Electronics'
 import Jewelery from './Jewelery'
 import Men from './Men'
@@ -12,9 +10,7 @@ import Women from './Women'
 
 const PC = () => {
     const { pcData, pcLoading, pcError } = useSelector(s => s.getPc)
-    const [show, setShow] = useState(false);
     const [category, setCategory] = useState('');
-    const navigate = useNavigate()
     const price = []
     const menue = [...new Set(pcData.map(item => item.category))]
     pcData.map(item => price.push(item.price))
@@ -122,8 +118,8 @@ const PC = () => {
                 pcError ? (<Typography color={ red }> error</Typography>) :
                     (<div className='flex flex-col items-center justify-center w-3/4 '>
                         <Grid container spacing={ 2 } className='w-3/4 overflow-y-scroll h-screen p-4'>
-                            { category == "electronics" ? <Electronics resault={ resault } category={ category } value={ value } /> : category == "jewelery" ? <Jewelery resault={ resault } category={ category } value={ value } /> :
-                                category == "men's clothing" ? <Men resault={ resault } category={ category } value={ value } /> : category == "women's clothing" ? <Women resault={ resault } category={ category } value={ value } /> : resault.length ?
+                            { category === "electronics" ? <Electronics resault={ resault } category={ category } value={ value } /> : category === "jewelery" ? <Jewelery resault={ resault } category={ category } value={ value } /> :
+                                category === "men's clothing" ? <Men resault={ resault } category={ category } value={ value } /> : category === "women's clothing" ? <Women resault={ resault } category={ category } value={ value } /> : resault.length ?
                                     resault.map(item => {
                                         return (
                                             <Grid item xl={ 3 } md={ 4 } sm={ 6 } xs={ 12 } key={ item.id }  >

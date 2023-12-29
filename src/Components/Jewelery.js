@@ -4,7 +4,7 @@ import { Card, CardActionArea, CardContent, Grid, Rating, Typography } from '@mu
 
 const Jewelery = ({ resault, value }) => {
     const category = resault.filter(item => {
-        return item.category == "jewelery"
+        return item.category === "jewelery"
 
     })
     console.log(category);

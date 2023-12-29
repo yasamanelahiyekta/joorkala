@@ -3,7 +3,7 @@ import { Card, CardActionArea, CardContent, Grid, Rating, Typography } from '@mu
 
 const Women = ({ resault, value }) => {
     const category = resault.filter(item => {
-        return item.category == "women's clothing"
+        return item.category === "women's clothing"
 
     })
     return (

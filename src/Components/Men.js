@@ -4,7 +4,7 @@ import { Card, CardActionArea, CardContent, Grid, Rating, Typography } from '@mu
 
 const Men = ({ resault, value }) => {
     const category = resault.filter(item => {
-        return item.category == "men's clothing"
+        return item.category === "men's clothing"
 
     })
     return (
